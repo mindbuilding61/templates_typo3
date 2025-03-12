@@ -1,0 +1,30 @@
+#
+# BACKENDLAYOUT: FOOTER
+#
+mod {
+	web_layout {
+		BackendLayouts {
+		footer {
+				title = LLL:EXT:genf/Resources/Private/Language/locallang_be.xlf:backend_layout.footer
+				config {
+					backend_layout {
+						colCount = 1
+						rowCount = 1
+						rows {
+							1 {
+								columns {
+									1 {
+										name = LLL:EXT:genf/Resources/Private/Language/locallang_be.xlf:backend_layout.column.footer
+										name = footer
+										colPos = 100
+									}
+								}
+							}
+						}
+					}
+				}
+				icon = EXT:genf/Resources/Public/Images/BackendLayouts/1column.png
+			}
+		}
+	}
+}

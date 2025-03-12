@@ -1,0 +1,149 @@
+TCEFORM.tt_content.header_layout {
+	altLabels {
+		0 = h2 - Themenüberschrift
+		1 = h1 - Seitenüberschrift
+		2 = h2 - Überschrift 2. Ordnung
+		3 = h3 - Überschrift 3. Ordnung
+		4 = h4 - Überschrift 4. Ordnung
+		5 = h5 - Überschrift 5. Ordnung
+	}
+	removeItems = 5
+
+	label = Format der Überschrift
+}
+
+TCEFORM.tt_content.layout.addItems {
+	3 = Normal
+	4 = Grüner Rahmen
+	5 = Grauer Rahmen
+	6 = Roter Rahmen
+	7 = Oranger Rahmen
+	8 = Blauer Rahmen
+	9 = Grauer Hintergrund
+	10 = gelber Kasten
+	11 = grüner Kasten
+	12 = blauer Kasten
+}
+
+TCEFORM {
+	tt_content {
+		layout {
+			removeItems = 0,1,2
+
+			types {
+			# Change labels for CType textpic
+				textpic {
+					addItems {
+						10 = Red
+						20 = Blue
+					}
+				}
+
+			# Change labels for CType textmedia
+				textmedia {
+					removeItems = 1,2,3,4,5
+					altLabels {
+						0 = lagweilig
+						6 = Pink
+					}
+				}
+			# Change labels for CType Sektionsindex
+				menu_section {
+					removeItems = 1,2,3,4,5,7,8
+					altLabels {
+						0 = Sektionslayout
+						6 = SChmonzesfarben
+					}
+				}
+			}
+		}
+	}
+}
+
+TCEFORM {
+	tt_content {
+		CType {
+			types {
+			# Change labels for CType Sektionsindex
+				menu_section {
+					label = Menue ausgewählter Seiten mit Titel der enthaltenen Inhaltselemente
+				}
+			}
+		}
+	}
+}
+
+#TCEFORM.pages.doktype {
+# Show only standard and "Spacer" page types
+	#keepItems = 1,3
+#}
+
+TCEFORM.tt_content.header_layout {
+
+# Add another header_layout option:
+
+		#addItems.kapitel = Kapitel
+
+	#addItems.kasten = Kasten
+
+# Add another one with localized label and icon
+
+## addItems.1525216023 = LLL:EXT:my_ext/Resources/Private/Language/locallang.xlf:header_layout
+
+## addItems.1525216023.icon = EXT:my_ext/icon.png
+
+}
+
+TCEFORM.tt_content.header_link.disabled = 0
+TCEFORM.tt_content.subheader.disabled = 0
+
+
+TCEMAIN.table.pages {
+# Pages will *not* have "(copy)" appended:
+		disablePrependAtCopy = 1
+# Pages will *not* be hidden upon copy:
+		disableHideAtCopy = 1
+}
+
+
+TCEFORM.tt_content.header_layout {
+# Add another header_layout option:
+	addItems.1525215969 = Eine Überschrift mal anders
+# Add another one with localized label and icon
+## addItems.1525216023 = LLL:EXT:my_ext/Resources/Private/Language/locallang.xlf:header_layout
+## addItems.1525216023.icon = EXT:my_ext/icon.png
+}
+
+TCEFORM.pages.title {
+	label = LLL:EXT:my_ext/Resources/Private/Language/locallang.xlf:table.column
+	label.default = New Label
+	label.de = Neuer Titel der Seite
+}
+
+TCEFORM.pages.seo_title {
+	label = LLL:EXT:my_ext/Resources/Private/Language/locallang.xlf:table.column
+	label.default = New Label
+	label.de = SEO-Kram - also Überschrift
+}
+TCEFORM.pages.tsconfig_includes {
+	label = LLL:EXT:my_ext/Resources/Private/Language/locallang.xlf:table.column
+	label.default = New Label
+	label.de = Hier gehört das TSConfig hin, was ich selbst gemacht hab.
+}
+
+TCEFORM.pages.doktype {
+	label = LLL:EXT:my_ext/Resources/Private/Language/locallang.xlf:table.column
+	label.default = New Label
+	label.de = Welche Art von Seite.
+}
+TCEFORM.pages.title {
+	label = LLL:EXT:my_ext/Resources/Private/Language/locallang.xlf:table.column
+	label.default = New Label
+	label.de = Der Titel der Seite, der auch in der Navigation angezeigt wird.
+}
+
+TCEFORM.pages.storage_pid.suggest.default {
+	minimumCharacters = 1
+}
+
+RTE.default.preset = genf

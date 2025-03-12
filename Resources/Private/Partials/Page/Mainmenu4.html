@@ -1,0 +1,53 @@
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="nav navbar-nav mr-auto">
+        <f:for each="{mainMenu}" as="mainMenuItem">
+            <li class="nav-item{f:if(condition:'{mainMenuItem.children}', then: ' dropdown')}"><a class="nav-link{f:if(condition:'{mainMenuItem.children}', then: ' dropdown-toggle')}{f:if(condition:'{mainMenuItem.current}', then: ' current')}{f:if(condition:'{mainMenuItem.active}', then: ' active')}" href="{mainMenuItem.link}">{mainMenuItem.title}</a>
+                <f:if condition="{mainMenuItem.children}">
+                    <f:render section="subMenu" arguments="{all}"/>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</div>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <f:if condition="{mainMenuItem.children}">
+                <f:render section="subMenu" arguments="{all}"/>
+            </f:if>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Über uns
+            </a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <a class="dropdown-item" href="#">Team</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dienstleistungen
+            </a>
+            <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <a class="dropdown-item" href="#">Webdesign</a>
+                <a class="dropdown-item" href="#">Entwicklung</a>
+                <a class="dropdown-item" href="#">SEO</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Kontakt</a>
+        </li>
+    </ul>
+</div>
+<f:section name="subMenu">
+    <ul class="dropdown-menu">
+        <f:for each="{subMenu}" as="subItem">
+            <li class="{f:if(condition:'{subItem.children}', then: ' dropdown')}"><a class="dropdown-item{f:if(condition:'{subItem.children}', then: ' dropdown-toggle')}{f:if(condition:'{subItem.current}', then: ' current')}" href="{subItem.link}">{subItem.title}</a>
+                <f:if condition="{subItem.children}">
+                    <f:render section="subMenu" arguments="{subMenu: subItem.children}"/>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</f:section>

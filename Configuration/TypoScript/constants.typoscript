@@ -1,0 +1,265 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    templates {
+        layoutRootPath = EXT:genf/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:genf/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:genf/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+############
+### PAGE ###
+############
+page {
+     fluidtemplate {
+        layoutRootPath = EXT:genf/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:genf/Resources/Private/Partials/Page/
+        templateRootPath = EXT:genf/Resources/Private/Templates/Page/
+    }
+    meta {
+        description = Homepage des Kunden
+        author = Thomas Johannknecht
+        keywords = typo3, ostwestfalen
+        viewport = width=device-width, initial-scale=1
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+    tracking {
+        google {
+            trackingID =
+            anonymizeIp = 1
+        }
+    }
+}
+
+
+##############
+### CONFIG ###
+##############
+config {
+    no_cache = 0
+    removeDefaultJS = 0
+    admPanel = 1
+    prefixLocalAnchors = all
+    headerComment = build by minduilding.de - ihrer coolen Typo3-Agentur in Ostwestfalen
+    sendCacheHeaders = 1
+}
+
+##############
+### CSS-Angaben ###
+##############
+# customsubcategory=100= Gestaltung des Footers
+# customsubcategory=105= Schriften und Farben
+# customsubcategory=106= Sprachauswahl
+# customsubcategory=107= Suchauswahl
+# customsubcategory=110= Prinzipielle Angaben zur Seite
+# customsubcategory=120= Angaben zum Trenner
+# customsubcategory=130= Angaben zur Navigation
+# customsubcategory=140= Angaben zum Logo
+# customsubcategory=210= Angaben zu den Bereichen
+# customsubcategory=310= Angaben zum Accordion
+
+plugin.genf {
+    vorgaben {
+        # cat=plugin.genf: vorgaben/110/100; type=text; label= ID des Footers: Hier bitte die SeitenID des Footers eintragen
+        footerContentId = 6
+
+        # cat=plugin.genf: vorgaben/110/110; type=text; label= ID der Suchseite: Hier bitte die SeitenID der Seite mit der Ke_search eintragen
+        searchId = 118
+
+        # cat=plugin.genf: vorgaben/110/132; type=text; label= Favicon der Seite: Favicon der Seite
+        favicon = EXT:genf/Resources/Public/Icons/favicon.ico
+
+        # cat=plugin.genf: vorgaben/110/140; type=color; label= Farbe des Burgermenues: Farbe des Burgermenues
+        burgerfarbe =
+
+    }
+
+    navigation {
+        # cat=plugin.genf: navigation/130/333; type=options[Fixiert = navbar navbar-expand-lg fixed-top navbar-dark bg-dark, Nicht fixiert = navbar navbar-expand-lg navbar-light bg-light]; label= Navigation: Fixiert oder nihct fixiert
+        navclass = Fixed
+        # cat=plugin.genf: navigation/130/334; type=text; label= Rand der Navigation: Rand der Navigation
+        bordernavbar =	2px solid #a1a1a1
+    }
+
+    slider{
+        # cat=plugin.genf: slider/135/123; type=text; label= Höhe des unteren Sliders: Höhe des unteren sliders
+        sliderhoehe =	324px
+    }
+
+    sitelogo{
+        # cat=plugin.genf: sitelogo/140/430; type=text; label= Logo der Seite: Hier bitte das Logo eintragen
+        sitelogo = EXT:genf/Resources/Public/Images/logo.png
+        # cat=plugin.genf: sitelogo/140/431; type=text; label= Breite des Logos: Breite des Logos
+        siteLogoWidth =
+        # cat=plugin.genf: sitelogo/140/432; type=text; label= Titel der Seite: Hier bitte den Seitentitel eintragen
+        siteTitle =
+        # cat=plugin.genf: sitelogo/140/433; type=text; label= Abstand des sliders/ersten Textes nach oben: Abstand des sliders/ersten Textes nach oben
+        abstand =
+    }
+
+    accordion {
+        # cat=plugin.genf: accordion/310/300; type=color; label= Farbe der Accordionüberschrift: Farbe der Accordionüberschrift
+        accordioncolorueberschrift =
+
+        # cat=plugin.genf: accordion/310/310; type=color; label= Farbe des Accordions: Farbe des Farbe des Accordions
+        accordioncolor =
+    }
+
+    button {
+        # cat=plugin.genf: button/320/300; type=color; label= Farbe der Buttonschrift: Farbe der Buttonschrift
+        buttonschriftfarbe =
+
+        # cat=plugin.genf: button/320/310; type=color; label= Farbe des Buttons: Farbe des Farbe des Buttons
+        buttoncolor =
+
+        # cat=plugin.genf: button/320/320; type=text; label= Margin des Buttons: Margin des Buttons
+        buttonmargin =
+
+        # cat=plugin.genf: button/320/330; type=text; label= Radius der Ecken des Buttons: Radius der Ecken des Buttons
+        buttonradius =
+
+        # cat=plugin.genf: button/320/340; type=text; label= Padding des Buttons: Padding des Buttons
+        buttonpadding =
+
+        # cat=plugin.genf: button/320/350; type=text; label= Breite des Buttons: Breite des Buttons
+        buttonwidth =
+    }
+
+    sprachauswahl {
+        # cat=plugin.genf: sprachauswahl/106/140;  type=options[Ohne = Ohne, Mit = LanguageMenu]; label= Sprachauswahl: Mit oder ohne Sprachauswahl:
+        sprachauswahl = Ohne
+    }
+
+    suchauswahl {
+
+        # cat=plugin.genf: suchauswahl/107/140;  type=options[Ohne = Ohne, Mit = Suche]; label= Suchauswahl: Mit oder ohne Suche:
+        suchauswahl = Ohne
+    }
+
+    fonts {
+
+        # cat=plugin.genf: fonts/105/190; type=color; label= Farbe der Standardschrift: Hier bitte die Farbe der Standardschrift auswählen:
+        primarycolor = #a1a1a1;
+
+        # cat=plugin.genf: fonts/105/200;  type=options[  = "Raleway", Roboto serif = "Roboto Serif",  Garamond = "EB Garamond", Montserrat =  "Montserrat", Open sans =  "Open Sans", Roboto = "Roboto", Spline = "Spline Sans", Hind = "Hind"]; label= Standardschrift: Standardschrift auswählen (Menue und Text):
+        fontfamily = Raleway
+
+        # cat=plugin.genf: fonts/105/210;  type=text; label= Größe der Standardschrift: Hier bitte die Größe der Standardschrift eintragen
+        fontsize =
+
+        # cat=plugin.genf: fonts/105/220; type=options[Raleway = "Raleway", Roboto serif = "Roboto Serif",  Garamond = "EB Garamond", Montserrat =  "Montserrat", Roboto = "Roboto"];  label=Font H1
+        family1 =
+
+        # cat=plugin.genf: fonts/105/221; type=text; label= Größe der H1: Hier bitte die Größe der H1 eintragen
+        fontSizeH1 = 2rem
+
+        # cat=plugin.genf: fonts/105/222; type=color; label= Farbe der H1: Hier bitte die Farbe der H1 eintragen
+        primarycolorh1 =
+
+        # cat=plugin.genf: fonts/105/230; type=options[Raleway = "Raleway", Roboto serif = "Roboto Serif",  Garamond = "EB Garamond", Montserrat =  "Montserrat", Roboto = "Roboto"];  label=Font H2
+        family2 =
+
+        # cat=plugin.genf: fonts/105/231; type=color; label= Farbe der H2: Hier bitte die Farbe der H2 eintragen
+        primarycolorh2 =
+
+        # cat=plugin.genf: fonts/105/232; type=text; label= Größe der H2: Hier bitte die Größe der H2 eintragen
+        fontSizeH2 = 1.7rem
+
+        # cat=plugin.genf: fonts/105/240; type=options[Raleway = "Raleway", Roboto serif = "Roboto Serif",  Garamond = "EB Garamond", Montserrat =  "Montserrat", Roboto = "Roboto"];  label=Font H3
+        family3 =
+
+        # cat=plugin.genf: fonts/105/241; type=color; label= Farbe der H3: Hier bitte die Farbe der H3 eintragen
+        primarycolorh3 =
+
+        # cat=plugin.genf: fonts/105/250; type=options[Raleway = "Raleway", Roboto serif = "Roboto Serif",  Garamond = "EB Garamond", Montserrat =  "Montserrat", Roboto = "Roboto"]; label=Font H4
+        family4 =
+
+        # cat=plugin.genf: fonts/105/251; type=color; label= Farbe der H4: Hier bitte die Farbe der H4 eintragen
+        primarycolorh4 =
+
+    }
+
+    footer {
+
+        # cat=plugin.genf: footer/100/120; type=color; label= Farbe der Footerlinks: Hier bitte die Farbe der Footerlinks eintragen
+        footerLinks = #a1a1a1;
+
+        # cat=plugin.genf: footer/100/130; type=color; label= Footerfarbe oben: Hier bitte die Farbe des oberen Footerbereichs eintragen
+        footerfarbe2 =
+
+        # cat=plugin.genf: footer/100/131; type=color; label= Footerschriftfarbe oben: Hier bitte die Farbe des oberen Footerschrift eintragen
+        footerschriftoben =
+
+        # cat=plugin.genf: footer/100/140; type=color; label= Footerlinie oben: Hier bitte die Farbe der Linie des oberen Footerbereichs eintragen
+        footerrand =
+
+        # cat=plugin.genf: footer/100/150; type=text; label= Footerandbreite: Hier bitte die Breite des Footerrandes oben eintragen
+        footerrandbreite =
+
+        # cat=plugin.genf: footer/100/160; type=color; label= Footerfarbe unten: Hier bitte die Farbe des unteren Footerbereichs eintragen
+        footerfarbe =
+
+        # cat=plugin.genf: footer/100/161; type=color; label= Footerschriftfarbe unten: Hier bitte die Farbe des untere Footerschrift eintragen
+        footerschriftunten =
+    }
+
+    trenner {
+
+        # cat=plugin.genf: trenner/120/120; type=color; label= Farbe des Trenners: Hier bitte die Farbe des Trenners eintragen
+        farbeTrenner = #a1a1a1;
+
+        # cat=plugin.genf: trenner/120/130; type=text; label= Höhe des Trenners: Hier bitte die Höhe des Trenners
+        hoehetrenner =
+
+        # cat=plugin.genf: trenner/120/140; type=text; label= Abstand des Trenners oben (margin-top): Hier bitte den Margin des Trenners oben eintragen
+        abstandtrenneroben =
+
+        # cat=plugin.genf: trenner/120/150; type=text; label= Abstand des Trenners unten (margin-bottom): Hier bitte den Margin des Trenners unten eintragen
+        abstandtrennerunten =
+
+        # cat=plugin.genf: trenner/120/160; type=text; label= Hintergrundbild des Trenners unten: Hier bitte das Hintergrundbild im Trenner angeben
+        imagetrenner =
+    }
+
+    bereiche {
+
+        # cat=plugin.genf: bereiche/210/152; type=options[Schmal = container, Breit = container-fluid]; label= Breite des Elements oben: Breite des Elements oben
+        containerclass = Schmal
+
+        # cat=plugin.genf: bereiche/210/153; type=color; label= Farbe des oberen Bereichs: Farbe des oberen Bereichs
+        containerclasscolor =
+
+        # cat=plugin.genf: bereiche/210/154; type=text; label= Padding des oberen Bereichs: Padding des oberen Bereichs
+        containerclasspadding =	1rem 0px
+
+        # cat=plugin.genf: bereiche/210/155; type=options[Schmal = container, Breit = container-fluid]; label= Breite des Elements mitte: Breite des Elements mitte
+        containerclass2 = Schmal
+
+        # cat=plugin.genf: bereiche/210/157; type=color; label= Farbe des mittleren Bereichs: Farbe des mittleren Bereichs
+        containerclasscolor2 =
+
+        # cat=plugin.genf: bereiche/210/156; type=text; label= Padding des mttleren Bereichs: Padding des mittleren Bereichs
+        containerclasspadding2 =	1rem 0px
+
+        # cat=plugin.genf: bereiche/210/159; type=options[Schmal = container, Breit = container-fluid]; label= Breite des Elements unten: Breite des Elements unten
+        containerclass3 = Schmal
+
+        # cat=plugin.genf: bereiche/210/160; type=color; label= Farbe des unteren Bereichs: Farbe des unteren Bereichs
+        containerclasscolor3 =
+
+        # cat=plugin.genf: bereiche/210/158; type=text; label= Padding des unteren Bereichs: Padding des unteren Bereichs
+        containerclasspadding3 =	1rem 0px
+    }
+
+}

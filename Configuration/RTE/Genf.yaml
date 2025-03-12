@@ -1,0 +1,73 @@
+####
+# Example of what CKEditor can all bring
+###
+
+# Load default processing options
+# Import basic configuration
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    contentsCss: "EXT:genf/Resources/Public/Css/rte.css"
+    stylesSet:
+      # block level styles
+      - { name: "H4 blau", element: "h4", styles: { color: "#004289", background: "white", padding-bottom: "1rem", font-weight: "400"} }
+      - { name: "Button blau", element: "a", styles: { color: "#ffffff", background: "#2D58A4", border: "1px solid #2D58A4", border-radius: "8px", padding: "12px" } }
+      - { name: "Quote / Citation", element: "blockquote" }
+      - { name: "Code block", element: "code" }
+      - { name: "Versuch", element: "a" }
+      # Inline styles
+      - { name: "Yellow marker", element: "span", styles: { background-color: "yellow" } }
+
+    format_tags: "p;h1;h2;h3;h4;h5;pre"
+
+    toolbarGroups:
+      - { name: clipboard, groups: [clipboard, undo] }
+      - { name: editing,   groups: [find, selection, spellchecker] }
+      - { name: links }
+      - { name: insert }
+      - { name: tools }
+      - { name: table }
+      - { name: tabletools }
+      - { name: document,  groups: [ mode, document, doctools ] }
+      - { name: others }
+      - "/"
+      - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+      - { name: paragraph,   groups: [ list, indent, blocks, align, bidi ] }
+      - { name: specialcharacters,   groups: [ insertcharacters ] }
+      - "/"
+      - { name: styles }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - font
+      - find
+      - bidi
+      - selectall
+      - autolink
+      - wordcount
+      - colordialog
+      - image
+      - softhyphen
+      - pastetools
+      - preview
+
+    removePlugins: null
+
+
+# Allow s and u tag
+processing:
+  allowTags:
+    - s
+    - u

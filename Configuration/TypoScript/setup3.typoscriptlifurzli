@@ -1,0 +1,110 @@
+##javascript direkt einbinden für Angaben im CSS
+page.headerData.220 = TEXT
+page.headerData.220.value (
+	<script type="text/javascript">
+document.documentElement.style
+	.setProperty('--footerschriftoben', '{$plugin.genf.footer.footerschriftoben}');
+document.documentElement.style
+	.setProperty('--footerschriftunten', '{$plugin.genf.footer.footerschriftunten}');
+document.documentElement.style
+	.setProperty('--footerrand', '{$plugin.genf.footer.footerrand}');
+document.documentElement.style
+	.setProperty('--footerrandbreite', '{$plugin.genf.footer.footerrandbreite}');
+document.documentElement.style
+	.setProperty('--footerlinks', '{$plugin.genf.footer.footerLinks}');
+document.documentElement.style
+	.setProperty('--footerfarbe', '{$plugin.genf.footer.footerfarbe}');
+document.documentElement.style
+	.setProperty('--footerfarbe2', '{$plugin.genf.footer.footerfarbe2}');
+
+document.documentElement.style
+	.setProperty('--primarycolorh1', '{$plugin.genf.fonts.primarycolorh1}');
+document.documentElement.style
+	.setProperty('--primarycolorh2', '{$plugin.genf.fonts.primarycolorh2}');
+document.documentElement.style
+	.setProperty('--primarycolorh3', '{$plugin.genf.fonts.primarycolorh3}');
+document.documentElement.style
+	.setProperty('--primarycolorh4', '{$plugin.genf.fonts.primarycolorh4}');
+document.documentElement.style
+	.setProperty('--primarycolorh5', '{$plugin.genf.fonts.primarycolorh5}');
+document.documentElement.style
+	.setProperty('--primarycolor', '{$plugin.genf.fonts.primarycolor}');
+document.documentElement.style
+	.setProperty('--fontSizeH1', '{$plugin.genf.fonts.fontSizeH1}');
+document.documentElement.style
+	.setProperty('--fontSizeH2', '{$plugin.genf.fonts.fontSizeH2}');
+document.documentElement.style
+	.setProperty('--fontfamily', '{$plugin.genf.fonts.fontfamily}');
+document.documentElement.style
+	.setProperty('--family1', '{$plugin.genf.fonts.family1}');
+document.documentElement.style
+	.setProperty('--family2', '{$plugin.genf.fonts.family2}');
+document.documentElement.style
+	.setProperty('--family3', '{$plugin.genf.fonts.family3}');
+document.documentElement.style
+	.setProperty('--family4', '{$plugin.genf.fonts.family4}');
+document.documentElement.style
+	.setProperty('--fontsize', '{$plugin.genf.fonts.fontsize}');
+document.documentElement.style
+	.setProperty('--primarycolor', '{$plugin.genf.fonts.primarycolor}');
+
+
+document.documentElement.style
+	.setProperty('--farbeTrenner', '{$plugin.genf.trenner.farbeTrenner}');
+document.documentElement.style
+	.setProperty('--hoehetrenner', '{$plugin.genf.trenner.hoehetrenner}');
+document.documentElement.style
+	.setProperty('--abstandtrenneroben', '{$plugin.genf.trenner.abstandtrenneroben}');
+document.documentElement.style
+	.setProperty('--abstandtrennerunten', '{$plugin.genf.trenner.abstandtrennerunten}');
+document.documentElement.style
+	.setProperty('--imagetrenner', '{$plugin.genf.trenner.imagetrenner}');
+
+document.documentElement.style
+	.setProperty('--abstandslideroben', '{$plugin.genf.slider.abstandslideroben}');
+document.documentElement.style
+	.setProperty('--abstandsliderunten', '{$plugin.genf.slider.abstandsliderunten}');
+document.documentElement.style
+	.setProperty('--sliderhoehe', '{$plugin.genf.slider.sliderhoehe}');
+
+document.documentElement.style
+	.setProperty('--abstand', '{$plugin.genf.sitelogo.abstand}');
+document.documentElement.style
+	.setProperty('--siteLogoWidth', '{$plugin.genf.sitelogo.siteLogoWidth}');
+
+document.documentElement.style
+	.setProperty('--abstandnachoben', '{$plugin.genf.vorgaben.abstandnachoben}');
+document.documentElement.style
+	.setProperty('--burgerfarbe', '{$plugin.genf.vorgaben.burgerfarbe}');
+document.documentElement.style
+	.setProperty('--bordernavbar', '{$plugin.genf.navigation.bordernavbar}');
+
+document.documentElement.style
+	.setProperty('--containerclasscolor', '{$plugin.genf.bereiche.containerclasscolor}');
+document.documentElement.style
+	.setProperty('--containerclasscolor2', '{$plugin.genf.bereiche.containerclasscolor2}');
+document.documentElement.style
+	.setProperty('--containerclasscolor3', '{$plugin.genf.bereiche.containerclasscolor3}');
+document.documentElement.style
+	.setProperty('--containerclasspadding', '{$plugin.genf.bereiche.containerclasspadding}');
+document.documentElement.style
+	.setProperty('--containerclasspadding2', '{$plugin.genf.bereiche.containerclasspadding2}');
+document.documentElement.style
+	.setProperty('--containerclasspadding3', '{$plugin.genf.bereiche.containerclasspadding3}');
+
+document.documentElement.style
+	.setProperty('--accordioncolor', '{$plugin.genf.accordion.accordioncolor}');
+document.documentElement.style
+	.setProperty('--accordioncolorueberschrift', '{$plugin.genf.accordion.accordioncolorueberschrift}');
+
+document.documentElement.style
+	.setProperty('--buttoncolor', '{$plugin.genf.button.buttoncolor}');
+document.documentElement.style
+	.setProperty('--buttonschriftfarbe', '{$plugin.genf.button.buttonschriftfarbe}');
+document.documentElement.style
+	.setProperty('--buttonmargin', '{$plugin.genf.button.buttonmargin}');
+        </script>
+)
+
+
+

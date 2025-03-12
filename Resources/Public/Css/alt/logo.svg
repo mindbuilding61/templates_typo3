@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 179 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(0.495031,0,0,0.345618,18.4791,17.9874)">
+        <rect x="-37.329" y="-52.044" width="361.594" height="222.789" style="fill:white;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-13.8015,-2.6661)">
+        <path d="M167.33,36.538C167.33,24.312 157.404,14.386 145.178,14.386L54.901,14.386C42.675,14.386 32.748,24.312 32.748,36.538L32.748,46.259C32.748,58.485 42.675,68.411 54.901,68.411L145.178,68.411C157.404,68.411 167.33,58.485 167.33,46.259L167.33,36.538Z" style="fill:white;stroke:rgb(48,68,161);stroke-width:5px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-56.4594,12.6134)">
+        <text x="90.499px" y="39.231px" style="font-family:'PTSans-Caption', 'PT Sans Caption', sans-serif;font-size:40px;fill:rgb(59,168,4);">L<tspan x="110.499px 140.379px " y="39.231px 39.231px ">OG</tspan>O</text>
+    </g>
+</svg>

@@ -1,0 +1,150 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "bild_mit_berschrift_und_text": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "image",
+                        "bodytext"
+                    ],
+                    "columnsOverride": {
+                        "bodytext": {
+                            "config": {
+                                "enableRichtext": 1,
+                                "richtextConfiguration": "genf"
+                            },
+                            "fullKey": "bodytext",
+                            "key": "bodytext",
+                            "type": "richtext"
+                        },
+                        "image": {
+                            "config": {
+                                "appearance": {
+                                    "elementBrowserEnabled": 1,
+                                    "enabledControls": {
+                                        "delete": 1,
+                                        "dragdrop": 1,
+                                        "hide": 1,
+                                        "info": 1,
+                                        "localize": 1,
+                                        "sort": 1
+                                    },
+                                    "expandSingle": 1,
+                                    "fileUploadAllowed": 1,
+                                    "useSortable": 1
+                                },
+                                "minitems": ""
+                            },
+                            "fullKey": "image",
+                            "imageoverlayPalette": 1,
+                            "key": "image",
+                            "type": "file"
+                        }
+                    },
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "bild_mit_berschrift_und_text",
+                    "label": "Bild mit \u00dcberschrift und Text",
+                    "labels": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                },
+                "button": {
+                    "color": "#769ac9",
+                    "colorOverlay": "#769ac9",
+                    "columns": [
+                        "tx_mask_link",
+                        "tx_mask_linkname"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "Hier den Text eingeben"
+                    ],
+                    "icon": "fa-anchor",
+                    "iconOverlay": "fa-anchor",
+                    "key": "button",
+                    "label": "button",
+                    "labels": [
+                        "Verlinkung",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                }
+            },
+            "sql": {
+                "tx_mask_link": {
+                    "tt_content": {
+                        "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_linkname": {
+                    "tt_content": {
+                        "tx_mask_linkname": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "bodytext": {
+                    "bodytextTypeByElement": {
+                        "bild_mit_berschrift_und_text": "richtext"
+                    },
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                },
+                "tx_mask_link": {
+                    "config": {
+                        "allowedTypes": [
+                            "page"
+                        ],
+                        "nullable": 0,
+                        "placeholder": "Verlinkung",
+                        "type": "link"
+                    },
+                    "fullKey": "tx_mask_link",
+                    "key": "link",
+                    "type": "link"
+                },
+                "tx_mask_linkname": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_linkname",
+                    "key": "linkname",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

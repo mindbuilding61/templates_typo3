@@ -1,0 +1,15 @@
+lib.root = COA
+lib.root {
+    10 = CONTENT
+    10 {
+        table = tt_content
+        select {
+            # The page with ID = 123 is the source.
+            pidInList = {$plugin.genf.vorgaben.rootId}
+            # Sorting is the same as in the backend.
+            orderBy = sorting
+            # Select the content of all column.
+            where = {#colPos} = 2
+        }
+    }
+}

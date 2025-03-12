@@ -1,0 +1,41 @@
+/* roboto-serif-regular - latin */
+@font-face {
+    font-family: 'Roboto Serif';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto_serif/roboto-serif-v5-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-regular.svg#RobotoSerif') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-serif-800 - latin */
+@font-face {
+    font-family: 'Roboto Serif';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/roboto_serif/roboto-serif-v5-latin-800.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-800.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-800.svg#RobotoSerif') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-serif-italic - latin */
+@font-face {
+    font-family: 'Roboto Serif';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/roboto_serif/roboto-serif-v5-latin-italic.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-italic.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/roboto_serif/roboto-serif-v5-latin-italic.svg#RobotoSerif') format('svg'); /* Legacy iOS */
+}

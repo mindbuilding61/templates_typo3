@@ -1,0 +1,385 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
+###<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup3.typoscript">
+
+################
+#### HELPER ####
+################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TypoScript/Helper/DynamicContent.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TypoScript/Helper/FooterContent.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TypoScript/Helper/lib.logo.typoscript">
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = EXT:genf/Resources/Public/Icons/favicon.ico
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary anymore.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+        templateRootPaths {
+            0 = EXT:genf/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:genf/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:genf/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                as = mainMenu
+                expandAll = 1
+                titleField = nav_title // title
+                levels = 6
+            }
+            22 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            22 {
+                as = rootline
+                titleField = nav_title // title
+                special = rootline
+                special.range = 0|-1
+            }
+            25 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            25 {
+                levels = 2
+                includeSpacer = 1
+                as = mainMenu
+            }
+            26 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            26 {
+                as = footerMenu
+                titleField = nav_title // title
+                levels = 2
+                special = directory
+                special.value = {$plugin.genf.vorgaben.footerContentId}
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            30 {
+                languages = auto
+                as = languageMenu
+            }
+        }
+    }
+    settings {
+        siteLogo = {$plugin.genf.sitelogo.sitelogo}
+        siteTitle = {$plugin.genf.sitelogo.siteTitle}
+        rootId = {$plugin.genf.vorgaben.rootId}
+        sarchId = {$plugin.genf.vorgaben.searchId}
+        footerContentId = {$plugin.genf.vorgaben.footerContentId}
+        sprachauswahl = {$plugin.genf.sprachauswahl.sprachauswahl}
+        suchauswahl = {$plugin.genf.suchauswahl.suchauswahl}
+        favicon = {$plugin.genf.vorgaben.favicon}
+        navclass = {$plugin.genf.navigation.navclass}
+        containerclass = {$plugin.genf.bereiche.containerclass}
+        containerclass2 = {$plugin.genf.bereiche.containerclass2}
+        containerclass3 = {$plugin.genf.bereiche.containerclass3}
+        shortcutIcon = {$plugin.genf.vorgaben.sitelogo.sitelogo}
+    }
+
+
+    variables {
+        content0 < styles.content.get
+        ## Footer Inhalte
+        content100 < styles.content.get
+        content100.select.where = colPos = 100
+        content100.select.pidInList = 6
+    }
+
+    meta {
+        viewport = {$page.meta.viewport}
+        robots = {$page.meta.robots}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+        description = {$page.meta.description}
+        description {
+            override.field = description
+        }
+        author = {$page.meta.author}
+        author {
+            override.field = author
+        }
+        keywords = {$page.meta.keywords}
+        keywords {
+            override.field = keywords
+        }
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+
+        # OpenGraph Tags
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+        og:description = {$page.meta.description}
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 1280c
+                            height = 720c
+                        }
+                        stdWrap {
+                            typolink {
+                                parameter.data = TSFE:lastImgResourceInfo|3
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSSLibs {
+
+    }
+
+    includeCSS {
+        10 = EXT:genf/Resources/Public/Css/bootstrap.min.css
+        20 = EXT:genf/Resources/Public/Css/jquery.smartmenus.bootstrap-4.css
+        30 = EXT:genf/Resources/Public/Css/customstyles.css
+        45 = EXT:genf/Resources/Public/Css/open_sans.css
+        50 = EXT:genf/Resources/Public/Css/raleway.css
+        55 = EXT:genf/Resources/Public/Css/spline.css
+        60 = EXT:genf/Resources/Public/Css/roboto_serif.css
+        65 = EXT:genf/Resources/Public/Css/roboto.css
+        70 = EXT:genf/Resources/Public/Css/montserrat.css
+        71 = EXT:genf/Resources/Public/Css/aos.css
+        72 = EXT:genf/Resources/Public/Css/hind.css
+        73 = EXT:genf/Resources/Public/Css/awesome.css
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+        1 = EXT:genf/Resources/Public/JavaScript/Dist/bootstrap.js
+        2 = EXT:genf/Resources/Public/JavaScript/Dist/popper.min.js
+        3 = EXT:genf/Resources/Public/JavaScript/height.js
+    }
+
+    includeJSFooterlibs {
+        1 = EXT:genf/Resources/Public/JavaScript/Dist/javascript.js
+        2 = EXT:genf/Resources/Public/JavaScript/Dist/aos.js
+    }
+
+}
+
+
+################
+#### CONFIG ####
+################
+config {
+    absRefPrefix = auto
+    no_cache = {$config.no_cache}
+    uniqueLinkVars = 1
+    pageTitleFirst = 1
+    linkVars = L
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = 1
+    admPanel = {$config.admPanel}
+    debug = 0
+    cache_period = 86400
+    sendCacheHeaders = {$config.sendCacheHeaders}
+    intTarget = -top
+    extTarget = _blank
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+    headerComment = {$config.headerComment}
+
+    // Disable Image Upscaling
+    noScaleUp = 1
+
+    // Compression and Concatenation of CSS and JS Files
+    compressJs = 0
+    compressCss = 0
+    concatenateJs = 0
+    concatenateCss = 0
+}
+##javascript direkt einbinden für Angaben im CSS
+page.headerData.220 = TEXT
+page.headerData.220.value (
+	<script type="text/javascript">
+document.documentElement.style
+	.setProperty('--footerschriftoben', '{$plugin.genf.footer.footerschriftoben}');
+document.documentElement.style
+	.setProperty('--footerschriftunten', '{$plugin.genf.footer.footerschriftunten}');
+document.documentElement.style
+	.setProperty('--footerrand', '{$plugin.genf.footer.footerrand}');
+document.documentElement.style
+	.setProperty('--footerrandbreite', '{$plugin.genf.footer.footerrandbreite}');
+document.documentElement.style
+	.setProperty('--footerlinks', '{$plugin.genf.footer.footerLinks}');
+document.documentElement.style
+	.setProperty('--footerfarbe', '{$plugin.genf.footer.footerfarbe}');
+document.documentElement.style
+	.setProperty('--footerfarbe2', '{$plugin.genf.footer.footerfarbe2}');
+
+document.documentElement.style
+	.setProperty('--primarycolorh1', '{$plugin.genf.fonts.primarycolorh1}');
+document.documentElement.style
+	.setProperty('--primarycolorh2', '{$plugin.genf.fonts.primarycolorh2}');
+document.documentElement.style
+	.setProperty('--primarycolorh3', '{$plugin.genf.fonts.primarycolorh3}');
+document.documentElement.style
+	.setProperty('--primarycolorh4', '{$plugin.genf.fonts.primarycolorh4}');
+document.documentElement.style
+	.setProperty('--primarycolorh5', '{$plugin.genf.fonts.primarycolorh5}');
+document.documentElement.style
+	.setProperty('--primarycolor', '{$plugin.genf.fonts.primarycolor}');
+document.documentElement.style
+	.setProperty('--fontSizeH1', '{$plugin.genf.fonts.fontSizeH1}');
+document.documentElement.style
+	.setProperty('--fontSizeH2', '{$plugin.genf.fonts.fontSizeH2}');
+document.documentElement.style
+	.setProperty('--fontfamily', '{$plugin.genf.fonts.fontfamily}');
+document.documentElement.style
+	.setProperty('--family1', '{$plugin.genf.fonts.family1}');
+document.documentElement.style
+	.setProperty('--family2', '{$plugin.genf.fonts.family2}');
+document.documentElement.style
+	.setProperty('--family3', '{$plugin.genf.fonts.family3}');
+document.documentElement.style
+	.setProperty('--family4', '{$plugin.genf.fonts.family4}');
+document.documentElement.style
+	.setProperty('--fontsize', '{$plugin.genf.fonts.fontsize}');
+document.documentElement.style
+	.setProperty('--primarycolor', '{$plugin.genf.fonts.primarycolor}');
+
+document.documentElement.style
+    .setProperty('--sliderhoehe', '{$plugin.genf.slider.sliderhoehe}');
+
+document.documentElement.style
+	.setProperty('--farbeTrenner', '{$plugin.genf.trenner.farbeTrenner}');
+document.documentElement.style
+	.setProperty('--hoehetrenner', '{$plugin.genf.trenner.hoehetrenner}');
+document.documentElement.style
+	.setProperty('--abstandtrenneroben', '{$plugin.genf.trenner.abstandtrenneroben}');
+document.documentElement.style
+	.setProperty('--abstandtrennerunten', '{$plugin.genf.trenner.abstandtrennerunten}');
+document.documentElement.style
+	.setProperty('--imagetrenner', '{$plugin.genf.trenner.imagetrenner}');
+
+document.documentElement.style
+	.setProperty('--abstandslideroben', '{$plugin.genf.slider.abstandslideroben}');
+document.documentElement.style
+	.setProperty('--abstandsliderunten', '{$plugin.genf.slider.abstandsliderunten}');
+document.documentElement.style
+	.setProperty('--sliderhoehe', '{$plugin.genf.slider.sliderhoehe}');
+
+document.documentElement.style
+.setProperty('--abstand', '{$plugin.genf.sitelogo.abstand}');
+document.documentElement.style
+.setProperty('--siteLogoWidth', '{$plugin.genf.sitelogo.siteLogoWidth}');
+document.documentElement.style
+.setProperty('--siteTitle', '{$plugin.genf.sitelogo.siteTitle}');
+
+document.documentElement.style
+	.setProperty('--abstandnachoben', '{$plugin.genf.vorgaben.abstandnachoben}');
+document.documentElement.style
+	.setProperty('--burgerfarbe', '{$plugin.genf.vorgaben.burgerfarbe}');
+document.documentElement.style
+	.setProperty('--bordernavbar', '{$plugin.genf.navigation.bordernavbar}');
+
+document.documentElement.style
+	.setProperty('--containerclasscolor', '{$plugin.genf.bereiche.containerclasscolor}');
+document.documentElement.style
+	.setProperty('--containerclasscolor2', '{$plugin.genf.bereiche.containerclasscolor2}');
+document.documentElement.style
+	.setProperty('--containerclasscolor3', '{$plugin.genf.bereiche.containerclasscolor3}');
+document.documentElement.style
+	.setProperty('--containerclasspadding', '{$plugin.genf.bereiche.containerclasspadding}');
+document.documentElement.style
+	.setProperty('--containerclasspadding2', '{$plugin.genf.bereiche.containerclasspadding2}');
+document.documentElement.style
+	.setProperty('--containerclasspadding3', '{$plugin.genf.bereiche.containerclasspadding3}');
+
+document.documentElement.style
+	.setProperty('--accordioncolor', '{$plugin.genf.accordion.accordioncolor}');
+document.documentElement.style
+	.setProperty('--accordioncolorueberschrift', '{$plugin.genf.accordion.accordioncolorueberschrift}');
+
+document.documentElement.style
+	.setProperty('--buttoncolor', '{$plugin.genf.button.buttoncolor}');
+document.documentElement.style
+	.setProperty('--buttonschriftfarbe', '{$plugin.genf.button.buttonschriftfarbe}');
+document.documentElement.style
+	.setProperty('--buttonmargin', '{$plugin.genf.button.buttonmargin}');
+document.documentElement.style
+.setProperty('--buttonradius', '{$plugin.genf.button.buttonradius}');
+document.documentElement.style
+.setProperty('--buttonpadding', '{$plugin.genf.button.buttonpadding}');
+document.documentElement.style
+.setProperty('--buttonwidth', '{$plugin.genf.button.buttonwidth}');
+
+document.documentElement.style
+.setProperty('--burgerfarbe', '{$plugin.genf.vorgaben.burgerfarbe}');
+        </script>
+)

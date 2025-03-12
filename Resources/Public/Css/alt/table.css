@@ -1,0 +1,36 @@
+
+.table {
+	display: table;
+	border: 1px solid silver;
+	border-collapse:collapse;
+	width: 100%;
+}
+
+.table-row {
+	display: table-row;
+	border: 1px solid silver;
+}
+
+.table-cell {
+	display: table-cell;
+	border: 1px solid silver;
+	padding: 15px;
+}
+
+.thead {
+	font-weight: bold;
+	background:#eee;
+}
+ @media only screen and (max-width: 800px) {
+
+	.table {border:none;}
+	
+	.table-row,
+	.table-cell {
+		display: block;
+		border: 1px solid silver;
+	}
+	
+	.table-row { margin-bottom: 20px; }
+	
+}

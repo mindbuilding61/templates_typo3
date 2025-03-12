@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <f:link.page pageUid="{settings.rootId}" class="navbar-brand" title="{settings.siteTitle}">
+        <f:image src="fileadmin/logo/logo.svg" alt="{settings.siteTitle}" class="img-fluid" width="{settings.siteLogoWidth}"/>
+    </f:link.page>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <f:for each="{mainMenu}" as="mainMenuItem">
+                <li class="nav-item active{f:if(condition:'{mainMenuItem.children}', then: ' dropdown')}"><a class="nav-link{f:if(condition:'{mainMenuItem.children}', then: ' dropdown-toggle')}{f:if(condition:'{mainMenuItem.current}', then: ' current')}{f:if(condition:'{mainMenuItem.active}', then: ' active')}" href="{mainMenuItem.link}">{mainMenuItem.title}</a>
+                    <f:if condition="{mainMenuItem.children}">
+                        <f:render section="subMenu" arguments="{subMenu: mainMenuItem.children}"/>
+                    </f:if>
+                </li>
+            </f:for>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Über uns
+                </a>
+                <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <a class="dropdown-item" href="#">Team</a>
+                    <a class="dropdown-item" href="#">Geschichte</a>
+                    <a class="dropdown-item" href="#">Werte</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<f:section name="subMenu">
+    <ul class="dropdown-menu">
+        <f:for each="{subMenu}" as="subItem">
+            <li class="{f:if(condition:'{subItem.children}', then: ' dropdown')}"><a class="dropdown-item{f:if(condition:'{subItem.children}', then: ' dropdown-toggle')}{f:if(condition:'{subItem.current}', then: ' current')}" href="{subItem.link}">{subItem.title}</a>
+                <f:if condition="{subItem.children}">
+                    <f:render section="subMenu" arguments="{subMenu: subItem.children}"/>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</f:section>

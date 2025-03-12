@@ -1,0 +1,10 @@
+#
+# PageTS for Genf
+#
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TsConfig/Page/RTE.tsconfig">
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/FooterBackendLayout.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/default.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:genf/Configuration/TsConfig/Page/Page.tsconfig">

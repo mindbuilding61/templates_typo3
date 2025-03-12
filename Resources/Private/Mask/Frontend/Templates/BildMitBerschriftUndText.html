@@ -1,0 +1,13 @@
+<f:if condition="{data.header}">
+    <h5>  {data.header}</h5>
+</f:if>
+<f:for each="{data.image}" as="file">
+    <f:image image="{file}" width="200" />
+    <div class="bildtext" id="bildtext">
+        <div class="bilddescription" id="bilddescription">{file.description}</div>
+        <div class="bildtitle" id="bildtitle">{file.title}</div>
+    </div>
+</f:for>
+<f:if condition="{data.bodytext}">
+   <br> {data.bodytext -> f:format.html()}
+</f:if>

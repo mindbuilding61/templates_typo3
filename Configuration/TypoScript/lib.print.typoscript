@@ -1,0 +1,4 @@
+lib.print = TEXT
+lib.print {
+    value = <a href="#" onclick="print();">Seite drucken</a>
+}
