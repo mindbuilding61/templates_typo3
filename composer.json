@@ -5,11 +5,11 @@
     "homepage": "https://mindbuilding.de",
     "license": ["GPL-2.0-or-later"],
     "keywords": ["TYPO3 CMS"],
-"require": {
-    "typo3/cms-core": "^12.0 || ^13.0",
-    "typo3/cms-rte-ckeditor": "^12.0 || ^13.0",
-    "typo3/cms-fluid-styled-content": "^12.0 || ^13.0"
-},
+    "require": {
+        "typo3/cms-core": "^12.0 || ^13.0",
+        "typo3/cms-rte-ckeditor": "^12.0 || ^13.0",
+        "typo3/cms-fluid-styled-content": "^12.0 || ^13.0"
+    },
     "autoload": {
         "psr-4": {
             "Mindbuilding\\Genf\\": "Classes/"
