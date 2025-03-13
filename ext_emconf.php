@@ -9,9 +9,9 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '12.4.0-12.4.99',
-            'fluid_styled_content' => '12.4.0-12.4.99',
-            'rte_ckeditor' => '12.4.0-12.4.99',
+            'typo3' => '12.4.0-13.4.99',
+            'fluid_styled_content' => '12.4.0-13.4.99',
+            'rte_ckeditor' => '12.4.0-13.4.99',
         ],
         'conflicts' => [
         ],
@@ -28,5 +28,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Thomas',
     'author_email' => 'mindbuilding@mailbox.org',
     'author_company' => 'mindbuilding',
-    'version' => '1.0.0',
+    'version' => '1.4.0',
 ];
